@@ -21,11 +21,11 @@ def build_codemap(spot):
 
 	# returns a dict mapping codes to callables
 	return {
-		0xffc23d: play_or_pause				# play/pause
-		0xff22dd: spot.previous_track		# previous
-		0xff02fd: spot.next_track			# next
-		0xffe01f: volume_down				# volume down
-		0xffa857: volume_up					# volume up
+		0xffc23d: play_or_pause,			# play/pause
+		0xff22dd: spot.previous_track,		# previous
+		0xff02fd: spot.next_track,			# next
+		0xffe01f: volume_down,				# volume down
+		0xffa857: volume_up,				# volume up
 	}
 
 
