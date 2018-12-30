@@ -23,8 +23,8 @@ class Infrared:
             time.sleep(0.1)
 
 
-    def _on_edge_detected(self):
-        logging.debug('ir.Infrared edge event detected')
+    def _on_edge_detected(self, channel):
+        logging.debug('ir.Infrared edge event detected, channel=%d', channel)
         code = self._read_pulses()
         if code:
             logging.debug('ir.Infrared received code %s', hex(code))
