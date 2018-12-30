@@ -44,7 +44,7 @@ def init_code_handler(codemap):
 
 def run_hapticity():
 	scope = 'user-modify-playback-state,user-read-playback-state'
-	token = util.prompt_for_user_token('Eelke Spaak', scope='scope',
+	token = util.prompt_for_user_token('Eelke Spaak', scope=scope,
 		client_id=auth.client_id, client_secret=auth.client_secret, 
 		redirect_uri=auth.redirect_url)
 	spot = Spotify(token)
