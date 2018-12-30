@@ -37,7 +37,7 @@ class Infrared:
     def _read_pulses(self, bouncetime=150):
         # when edge detect is called (which requires less CPU than constant
         # data acquisition), we acquire data as quickly as possible
-        data = self._binary_acquire(self.pin_number, bouncetime/1000.0)
+        data = self._binary_acquire(bouncetime/1000.0)
         if len(data) < bouncetime:
             return
         rate = len(data) / (bouncetime / 1000.0)
