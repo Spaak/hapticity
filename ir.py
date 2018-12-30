@@ -19,6 +19,8 @@ class Infrared:
         logging.info('ir.Infrared started listening')
         GPIO.add_event_detect(self.pin_number, GPIO.FALLING)
         GPIO.add_event_callback(self.pin_number, self._on_edge_detected)
+        while True:
+            time.sleep(0.1)
 
 
     def _on_edge_detected(self):
