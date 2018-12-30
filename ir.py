@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from time import time
+import time
 import logging
 
 # IR reading logic based on:
@@ -69,9 +69,9 @@ class Infrared:
 
     def _binary_aquire(self, duration):
         # aquires data as quickly as possible
-        t0 = time()
+        t0 = time.time()
         results = []
-        while (time() - t0) < duration:
+        while (time.time() - t0) < duration:
             results.append(GPIO.input(self.pin_number))
         return results
 
