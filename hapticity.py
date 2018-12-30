@@ -7,17 +7,18 @@ from ir import Infrared
 def build_codemap(spot):
 	def play_or_pause():
 		if spot.current_playback()['is_playing']:
+
 			spot.pause_playback()
 		else:
 			spot.start_playback()
 
 	def volume_up():
 		curvol = spot.current_playback()['device']['volume_percent']
-		spot.volume(max(100, curvol+5))
+		spot.volume(min(100, curvol+5))
 
 	def volume_down():
 		curvol = spot.current_playback()['device']['volume_percent']
-		spot.volume(min(0, curvol-5))
+		spot.volume(max(0, curvol-5))
 
 	# returns a dict mapping codes to callables
 	return {
