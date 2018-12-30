@@ -49,7 +49,7 @@ def run_hapticity():
 		redirect_uri=auth.redirect_url)
 	spot = Spotify(token)
 
-	callback = init_code_handler(spot)
+	callback = init_code_handler(build_codemap(spot))
 	ir = Infrared(callback=callback)
 	ir.listen()
 
