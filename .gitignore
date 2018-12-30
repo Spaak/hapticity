@@ -1,0 +1,3 @@
+auth.py
+.cache-*
+__pycache__/*
